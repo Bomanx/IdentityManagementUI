@@ -1,0 +1,25 @@
+#button{
+  position:absolute;
+  margin-left:auto;
+
+  width:150px;
+  bottom:280px;
+}
+.col-form-label-lg{
+  margin-left:15px
+}
+
+div.form
+{
+  display: block;
+  text-align: center;
+  margin: fill;
+}
+
+form
+{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

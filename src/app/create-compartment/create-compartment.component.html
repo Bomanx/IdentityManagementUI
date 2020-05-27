@@ -1,0 +1,20 @@
+<div class="form">
+  <h1>Create Compartment</h1>
+  <form [formGroup]="CompartmentForm" (ngSubmit)="onSubmit()">
+    <label class="col-form-label-lg">
+      Name:
+      <input type="text" id="name" formControlName="name"  class="form-control" required pattern="[^\s][a-zA-Z0-9._-]*">
+    </label><br>
+    <div *ngIf="CompartmentForm.controls.name.invalid && CompartmentForm.controls.name.dirty" class="text-info col-form-label-lg">
+      No spaces. Only letters, numerals, hyphens, periods, or underscores.
+    </div>
+    <label class="col-form-label-lg">
+      Description:
+      <input type="text" id="description" formControlName="description" class="form-control" required>
+    </label><br>
+    <label class="col-form-label-lg">
+      <button id="create" class="mat-stroked-button" [disabled]="CompartmentForm.invalid">Create</button>
+      <button id="cancel" class="mat-stroked-button" routerLink="/Landing">Cancel</button>
+    </label>
+  </form>
+</div>

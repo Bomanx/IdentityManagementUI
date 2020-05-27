@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #212530">
+  <button mat-button (click)="sidenav.toggle()" class="navbar-toggler-icon"></button>
+  <a class="navbar-brand" href="#" id="brand">Tenancy Management</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+  </div>
+</nav>
+
+<div class="justify-content-md-between">
+  <mat-sidenav-container class="mat-drawer-side" fullscreen id="container" fxFlex>
+    <mat-sidenav #sidenav mode="over" class="navbar-expand-md navbar-dark" style="background-color: #2D3240">
+
+      <mat-list>
+        <mat-list-item class="navbar-brand btn-outline-info" routerLink="/Landing">
+          <mat-icon matListIcon style="padding-right: 7px">home</mat-icon>Home
+        </mat-list-item>
+
+        <mat-expansion-panel (closed)="IdentityOpen = false" (opened)="IdentityOpen = true" style="background-color: #2D3240">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="navbar-brand">
+              Identity Management
+            </mat-panel-title>
+          </mat-expansion-panel-header >
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/CreateUser" style="color:white">Create User</a>
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/CreateGroup" style="color:white">Create Group</a>
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/CreateCompartment" style="color:white">Create Compartment</a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel (closed)="ReportOpen = false" (opened)="ReportOpen = true" style="background-color: #2D3240">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="navbar-brand">
+              Detailed Reports
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/DisplayUsers" style="color:white">Display Users</a>
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/DisplayUsers" style="color:white">Display Groups</a>
+          <a mat-list-item class="nav-link btn-outline-info" routerLink="/DisplayUsers" style="color:white">Display Compartments</a>
+        </mat-expansion-panel>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <app-footer id="footer"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
+
+
+
